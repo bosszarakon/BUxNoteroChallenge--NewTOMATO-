@@ -21,7 +21,7 @@ public class BarSlider : MonoBehaviour
     Color midScore = Color.yellow;
     Color highScore = Color.green;
 
-    void FixedUpdate()
+    void Update()
     {
       
             UpdateProgress();
@@ -135,7 +135,18 @@ public class BarSlider : MonoBehaviour
             thaiBG.SetActive(false);
             succeed = true;
         }
-      
+        
+        if(int.Parse(valueText.text) >= 21000)
+        {
+            progress = 11;
+        }
+
+        if(progress == 10)
+        {
+            normalBG.SetActive(true);
+            thaiBG.SetActive(false);
+            succeed = true;
+        }
     }
     
 }
