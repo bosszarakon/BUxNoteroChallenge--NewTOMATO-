@@ -135,7 +135,16 @@ public class BarSlider : MonoBehaviour
             thaiBG.SetActive(false);
             succeed = true;
         }
-      
+
+        if (int.Parse(valueText.text) > 20000)
+        {
+            progress = 10;
+            slider.value = progress;
+            barColor.gameObject.GetComponent<Image>().color = highScore;
+            handle.gameObject.GetComponent<Image>().color = highScore;
+           
+        }
+
     }
     
 }
